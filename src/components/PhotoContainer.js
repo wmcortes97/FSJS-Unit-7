@@ -5,7 +5,12 @@ import Photos from "./Photos";
 // REFERENCE:  `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
 const photoContainer = ({ photoData }) => {
   let photoList = photoData.map((photo) => (
-    <Photos server={photo.server} id={photo.id} secret={photo.secret} />
+    <Photos
+      server={photo.server}
+      key={photo.id}
+      secret={photo.secret}
+      title={photo.title}
+    />
   ));
 
   return (

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 // import apiKey from "./config";
 
-//components
+//---------------------------Component Imports------------------------//
 import SearchForm from "./components/SearchForm";
 import MainNav from "./components/MainNav";
 import PhotoContainer from "./components/PhotoContainer";
 
-//-----------------------------App-------------------------//
+//-----------------------------App----------------------------//
 const App = () => {
-  // const photoURL = `https://live.staticflickr.com/${server_id}/${id}_${secret}.jpg`;
-  const [photos, setPhotos] = useState(null);
+  const [photos, setPhotos] = useState([]);
   useEffect(() => {
     fetch(
       "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4cfeb4644a805a74f5f147d17164b18&tags=dogs&per_page=24&format=json&nojsoncallback=1"
