@@ -20,7 +20,7 @@ const App = () => {
   //     });
   // }, []);
 
-  const performSearch = (query) => {
+  const performSearch = (query = "puppies") => {
     fetch(
       `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4cfeb4644a805a74f5f147d17164b18&tags=${query}&per_page=24&format=json&nojsoncallback=1`
     )
