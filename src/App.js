@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 // import apiKey from "./config";
 
 //---------------------------Component Imports------------------------//
 import SearchForm from "./components/SearchForm";
 import MainNav from "./components/MainNav";
 import PhotoContainer from "./components/PhotoContainer";
+import FourOFour from "./components/FourOFour";
 
 //-----------------------------App----------------------------//
 const App = () => {
@@ -36,6 +38,9 @@ const App = () => {
         <SearchForm performSearchFunc={performSearch} />
         <MainNav />
         <PhotoContainer photoData={photos} />
+        <Routes>
+          <Route path="*" element={<FourOFour />} />
+        </Routes>
       </div>
     </React.Fragment>
   );
