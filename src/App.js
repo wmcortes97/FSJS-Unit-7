@@ -22,6 +22,10 @@ const App = () => {
         console.log("Error fetching and parsing data", error);
       });
   };
+
+  useEffect(() => {
+    performSearch();
+  }, []);
   return (
     <React.Fragment>
       <div className="container">
