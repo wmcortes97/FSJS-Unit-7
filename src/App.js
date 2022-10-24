@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+
 // import apiKey from "./config";
 
 //---------------------------Component Imports------------------------//
@@ -31,8 +32,21 @@ const App = () => {
       <div className="container">
         <SearchForm performSearchFunc={performSearch} />
         <MainNav />
-        <PhotoContainer photoData={photos} />
         <Routes>
+          <Route path="/" element={<Navigate to="/puppies" />} />
+          <Route
+            path="/puppies"
+            element={<PhotoContainer photoData={photos} />}
+          />
+          {/* <Route
+            path="/kittens"
+            element={<PhotoContainer photoData={photos} />}
+          />
+          <Route
+            path="/hamsters"
+            element={<PhotoContainer photoData={photos} />}
+          /> */}
+          <Route path="/search/:tag" element={<PhotoContainer />} />
           <Route path="*" element={<FourOFour />} />
         </Routes>
       </div>
