@@ -31,21 +31,21 @@ const App = () => {
     <React.Fragment>
       <div className="container">
         <SearchForm performSearchFunc={performSearch} />
-        <MainNav />
+        <MainNav search={performSearch} />
         <Routes>
           <Route path="/" element={<Navigate to="/puppies" />} />
           <Route
             path="/puppies"
             element={<PhotoContainer photoData={photos} />}
           />
-          {/* <Route
+          <Route
             path="/kittens"
             element={<PhotoContainer photoData={photos} />}
           />
           <Route
             path="/hamsters"
             element={<PhotoContainer photoData={photos} />}
-          /> */}
+          />
           <Route path="/search/:tag" element={<PhotoContainer />} />
           <Route path="*" element={<FourOFour />} />
         </Routes>
