@@ -23,6 +23,11 @@ const App = () => {
         console.log("Error fetching and parsing data", error);
       });
   };
+  //accessing tag params from search route
+  const paramTag = (tag) => {
+    console.log("hi from app:", tag);
+    return tag;
+  };
 
   useEffect(() => {
     performSearch();
@@ -46,7 +51,12 @@ const App = () => {
             path="/hamsters"
             element={<PhotoContainer photoData={photos} />}
           />
-          <Route path="/search/:tag" element={<PhotoContainer />} />
+          <Route
+            path="/search/:tag"
+            element={
+              <PhotoContainer photoData={photos} paramTagFunc={paramTag} />
+            }
+          />
           <Route path="*" element={<FourOFour />} />
         </Routes>
       </div>

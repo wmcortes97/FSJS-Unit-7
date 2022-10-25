@@ -1,8 +1,13 @@
 import React from "react";
 import NotFound from "./NotFound";
 import Photos from "./Photos";
+import { useParams } from "react-router-dom";
 
-const photoContainer = ({ photoData }) => {
+const PhotoContainer = ({ photoData, paramTagFunc }) => {
+  let params = useParams();
+
+  paramTagFunc(params);
+
   let photoList;
 
   if (photoData.length > 0) {
@@ -27,4 +32,4 @@ const photoContainer = ({ photoData }) => {
   );
 };
 
-export default photoContainer;
+export default PhotoContainer;

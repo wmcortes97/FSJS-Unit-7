@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchForm = ({ performSearchFunc }) => {
   const [text, setText] = useState("");
+
+  const tag = useRef();
+  const navigate = useNavigate();
 
   const onSearch = (e) => {
     setText(e.target.value);
@@ -10,6 +14,10 @@ const SearchForm = ({ performSearchFunc }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     performSearchFunc(text);
+
+    // let tagName = tag.current.value;
+    // let path = `/search/${tagName}`;
+    navigate(`/search/${text}`);
     e.currentTarget.reset();
   };
   return (
@@ -20,6 +28,7 @@ const SearchForm = ({ performSearchFunc }) => {
         placeholder="Search"
         required
         onChange={onSearch}
+        ref={tag}
       />
       <button type="submit" className="search-button">
         <svg
