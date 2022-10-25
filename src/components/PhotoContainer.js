@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NotFound from "./NotFound";
 import Photos from "./Photos";
 import { useParams } from "react-router-dom";
 
-const PhotoContainer = ({ photoData, paramTag }) => {
-  const params = useParams();
-  console.log("hi from photocontainer:", params);
+const PhotoContainer = ({ photoData, performSearch }) => {
+  let params = useParams();
+  //   console.log("from photocontainer:", params);
+  //   console.log("using params.tag", params.tag);
 
-  paramTag(params);
+  useEffect(() => {
+    if (params !== "puppies") {
+      performSearch(params.tag);
+    }
+  }, [params, performSearch]);
 
   let photoList;
 

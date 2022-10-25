@@ -25,10 +25,10 @@ const App = () => {
       });
   };
   //accessing tag params from search route
-  const paramTag = (tag) => {
-    console.log("hi from app:", tag);
-    return tag;
-  };
+  // const paramTag = (tag) => {
+  //   console.log("hi from app:", tag);
+  //   return tag;
+  // };
 
   useEffect(() => {
     performSearch();
@@ -36,7 +36,7 @@ const App = () => {
   return (
     <React.Fragment>
       <div className="container">
-        <SearchForm performSearchFunc={performSearch} paramTag={paramTag} />
+        <SearchForm performSearchFunc={performSearch} />
         <MainNav search={performSearch} />
         <Routes>
           <Route path="/" element={<Navigate to="/puppies" />} />
@@ -54,7 +54,12 @@ const App = () => {
           />
           <Route
             path="/search/:tag"
-            element={<PhotoContainer photoData={photos} paramTag={paramTag} />}
+            element={
+              <PhotoContainer
+                photoData={photos}
+                performSearch={performSearch}
+              />
+            }
           />
           <Route path="*" element={<FourOFour />} />
         </Routes>
