@@ -3,10 +3,11 @@ import NotFound from "./NotFound";
 import Photos from "./Photos";
 import { useParams } from "react-router-dom";
 
-const PhotoContainer = ({ photoData, paramTagFunc }) => {
-  let params = useParams();
+const PhotoContainer = ({ photoData, paramTag }) => {
+  const params = useParams();
+  console.log("hi from photocontainer:", params);
 
-  paramTagFunc(params);
+  paramTag(params);
 
   let photoList;
 

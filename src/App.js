@@ -12,6 +12,7 @@ import FourOFour from "./components/FourOFour";
 //-----------------------------App----------------------------//
 const App = () => {
   const [photos, setPhotos] = useState([]);
+  // const [query, setQuery] = useState([]);
 
   const performSearch = (query = "puppies") => {
     fetch(
@@ -35,7 +36,7 @@ const App = () => {
   return (
     <React.Fragment>
       <div className="container">
-        <SearchForm performSearchFunc={performSearch} />
+        <SearchForm performSearchFunc={performSearch} paramTag={paramTag} />
         <MainNav search={performSearch} />
         <Routes>
           <Route path="/" element={<Navigate to="/puppies" />} />
@@ -53,9 +54,7 @@ const App = () => {
           />
           <Route
             path="/search/:tag"
-            element={
-              <PhotoContainer photoData={photos} paramTagFunc={paramTag} />
-            }
+            element={<PhotoContainer photoData={photos} paramTag={paramTag} />}
           />
           <Route path="*" element={<FourOFour />} />
         </Routes>

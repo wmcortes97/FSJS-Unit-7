@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SearchForm = ({ performSearchFunc }) => {
+const SearchForm = ({ performSearchFunc, paramTag }) => {
   const [text, setText] = useState("");
 
-  const tag = useRef();
+  //   const tag = useRef();
   const navigate = useNavigate();
 
   const onSearch = (e) => {
@@ -20,6 +20,7 @@ const SearchForm = ({ performSearchFunc }) => {
     navigate(`/search/${text}`);
     e.currentTarget.reset();
   };
+
   return (
     <form className="search-form" onSubmit={handleSubmit}>
       <input
@@ -28,7 +29,7 @@ const SearchForm = ({ performSearchFunc }) => {
         placeholder="Search"
         required
         onChange={onSearch}
-        ref={tag}
+        // ref={tag}
       />
       <button type="submit" className="search-button">
         <svg
