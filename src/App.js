@@ -42,15 +42,30 @@ const App = () => {
           <Route path="/" element={<Navigate to="/puppies" />} />
           <Route
             path="/puppies"
-            element={<PhotoContainer photoData={photos} />}
+            element={
+              <PhotoContainer
+                photoData={photos}
+                performSearch={performSearch}
+              />
+            }
           />
           <Route
             path="/kittens"
-            element={<PhotoContainer photoData={photos} />}
+            element={
+              <PhotoContainer
+                photoData={photos}
+                performSearch={performSearch}
+              />
+            }
           />
           <Route
             path="/hamsters"
-            element={<PhotoContainer photoData={photos} />}
+            element={
+              <PhotoContainer
+                photoData={photos}
+                performSearch={performSearch}
+              />
+            }
           />
           <Route
             path="/search/:tag"
