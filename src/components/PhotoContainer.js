@@ -6,8 +6,6 @@ import { useLocation, useParams } from "react-router-dom";
 const PhotoContainer = ({ photoData, performSearch }) => {
   const location = useLocation();
   let params = useParams();
-  //   console.log("from photocontainer:", params);
-  //   console.log("using params.tag", params.tag);
 
   useEffect(() => {
     if (params.tag) {

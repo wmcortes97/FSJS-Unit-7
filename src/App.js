@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-
-// import apiKey from "./config";
+import apiKey from "./config";
 
 //---------------------------Component Imports------------------------//
 import SearchForm from "./components/SearchForm";
@@ -12,11 +11,10 @@ import FourOFour from "./components/FourOFour";
 //-----------------------------App----------------------------//
 const App = () => {
   const [photos, setPhotos] = useState([]);
-  // const [query, setQuery] = useState([]);
 
   const performSearch = (query = "puppies") => {
     fetch(
-      `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4cfeb4644a805a74f5f147d17164b18&tags=${query}&per_page=24&format=json&nojsoncallback=1`
+      `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
     )
       .then((response) => response.json())
       .then((responseData) => setPhotos(responseData.photos.photo))
@@ -24,15 +22,11 @@ const App = () => {
         console.log("Error fetching and parsing data", error);
       });
   };
-  //accessing tag params from search route
-  // const paramTag = (tag) => {
-  //   console.log("hi from app:", tag);
-  //   return tag;
-  // };
 
   useEffect(() => {
     performSearch();
   }, []);
+
   return (
     <React.Fragment>
       <div className="container">

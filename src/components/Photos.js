@@ -1,5 +1,5 @@
 import React from "react";
-// REFERENCE:  `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
+
 const Photos = (props) => (
   <li>
     <img
