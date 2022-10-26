@@ -2,6 +2,8 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #3f4850;
+  background: rgb(63,94,251);
+  background: linear-gradient(315deg, rgba(63,94,251,1) 0%, rgba(252,70,107,0.2595413165266106) 100%);
 }
 
 h2 {
@@ -80,6 +82,8 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+  
+
 }
 
 .photo-container ul img {
@@ -90,6 +94,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 
 .photo-container li:hover img {
   transform: scale(1.65);
+  
 }
 
 .photo-container .not-found {
