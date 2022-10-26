@@ -7,6 +7,7 @@ const PhotoContainer = ({ photoData, performSearch }) => {
   const location = useLocation();
   let params = useParams();
 
+  //calls perform search function on url parameters or path name using a conditional statement
   useEffect(() => {
     if (params.tag) {
       performSearch(params.tag);

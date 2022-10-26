@@ -11,7 +11,7 @@ import FourOFour from "./components/FourOFour";
 //-----------------------------App----------------------------//
 const App = () => {
   const [photos, setPhotos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   const performSearch = (query = "puppies") => {
     fetch(
@@ -22,8 +22,7 @@ const App = () => {
       .catch((error) => {
         console.log("Error fetching and parsing data", error);
       });
-    setLoading(false);
-    //console.log(loading);
+    // setLoading(false);
   };
 
   useEffect(() => {

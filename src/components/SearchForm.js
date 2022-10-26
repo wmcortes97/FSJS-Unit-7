@@ -5,11 +5,18 @@ const SearchForm = ({ performSearchFunc }) => {
   const [text, setText] = useState("");
 
   const navigate = useNavigate();
-
+  /**
+   * @param {string} e
+   * This function accepts the event or input value as a string
+   */
   const onSearch = (e) => {
     setText(e.target.value);
   };
 
+  /**
+   * @param {onClick event} e
+   * This function is triggered when the onClick event is fulfilled. It calls the function performSearch created in App.
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     performSearchFunc(text);
