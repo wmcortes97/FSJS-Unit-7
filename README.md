@@ -1,3 +1,7 @@
+# Create a config file
+
+Create a congif file inside the src folder that will store your flickr API key. Set this key to apiKey exactly.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
